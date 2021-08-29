@@ -4,9 +4,13 @@ from pprint import pprint
 import os
 import timeit
 import random
-
-clear = lambda: os.system('clear')
-
+import sys
+is_windows = sys.platform.startswith('win')
+def clear():
+  if is_windows:
+    os.system('cls')
+  else:
+    os.system('clear')
 blank = [[2,8,0,0,0,0,0,0,1],
          [0,0,0,8,0,1,0,0,4],
          [0,0,4,0,7,0,3,0,0],
