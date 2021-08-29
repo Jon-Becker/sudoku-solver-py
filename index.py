@@ -196,9 +196,11 @@ def fillInSingularPossibilities(soduku, n):
     if n == -1:
       print("Impossible Solve")
       quit()
-    fillInSingularPossibilities(sudoku, 0)
+    fillInSingularPossibilities(sudoku, -1)
   if hasSingular:
     hasSingular = False
+    if n == -1:
+      sudoku.setBackup(sudoku.getBoard())
     fillInSingularPossibilities(sudoku, 0)
   else:
     if soduku.isSolved()['solved']:
