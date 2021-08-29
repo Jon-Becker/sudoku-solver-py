@@ -193,6 +193,9 @@ def fillInSingularPossibilities(soduku, n):
   if invalidBoard:
     invalidBoard = False
     soduku.restoreBackup()
+    if n == -1:
+      print("Impossible Solve")
+      quit()
     fillInSingularPossibilities(sudoku, 0)
   if hasSingular:
     hasSingular = False
@@ -205,7 +208,7 @@ def fillInSingularPossibilities(soduku, n):
       pprint(soduku.getBoard())
       quit()
     else:
-      if n != 0:
+      if n == 1:
         soduku.restoreBackup()
         fillInSingularPossibilities(sudoku, 1)
       else:
@@ -217,4 +220,4 @@ def fillInSingularPossibilities(soduku, n):
                 
 
 
-fillInSingularPossibilities(sudoku, 0)
+fillInSingularPossibilities(sudoku, -1)
