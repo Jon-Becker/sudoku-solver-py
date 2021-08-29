@@ -213,7 +213,7 @@ def fillInSingularPossibilities(soduku, n):
           for col, value in enumerate(rowArray):
             if not isinstance(value, int):
               soduku.placeNumber(row, col, random.choice(value))
-              fillInSingularPossibilities(sudoku, 1)
+              fillInSingularPossibilities(sudoku, 0)
                 
 
 
