@@ -1,5 +1,6 @@
 # sudoku-solver-py
 soduku-solver-py is a simple program I challenged myself to create in 6 hours in python. Python is a language I need the most practice with, so I felt like this would be a good project to challenge that. This was a timed challenge, so there are most likely bugs, and it is not efficient at all.
+[View Demo](https://jbecker.dev/demos/sudoku-solver-py)
 
 ## How it works
 - An object `Board` is generated which contains `self.board` and `self.backup`, with various helper classes such as `Board.restoreBackup()` and `Board.canPlaceNumber`.
