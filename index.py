@@ -25,6 +25,8 @@ class Board:
   def __init__(self, board):
     self.board = deepcopy(board)
     self.backup = deepcopy(board)
+    self.lastChoice = 0
+
   def getBoard(self):
     return self.board
   def getBackup(self):
@@ -217,7 +219,11 @@ def fillInSingularPossibilities(soduku, n):
         for row, rowArray in enumerate(potentialBoardValues):
           for col, value in enumerate(rowArray):
             if not isinstance(value, int):
-              soduku.placeNumber(row, col, random.choice(value))
+              choice = random.choice(value)
+              while choice == sudoku.lastChoice:
+                choice = random.choice(value)
+              sudoku.lastChoice = choice
+              soduku.placeNumber(row, col, choice)
               fillInSingularPossibilities(sudoku, 0)
                 
 
